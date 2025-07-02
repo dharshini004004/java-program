@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class VowelCounter {
+    public static int countVowels(String word) {
+        int count = 0;
+        word = word.toLowerCase();
+        for (int i = 0; i < word.length(); i++) {
+            char ch = word.charAt(i);
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.next();
+
+        int vowelCount = countVowels(input);
+        System.out.println("count: " + vowelCount);
+    }
+}
