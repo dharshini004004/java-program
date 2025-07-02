@@ -1,0 +1,33 @@
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.Scanner;
+
+public class SumOfDigitsRecursive {
+    
+    
+    public static int sumDigits(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return (n % 10) + sumDigits(n / 10);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        sc.close();
+
+        
+        if (num >= 1000 || num < 0) {
+            System.out.println("Enter a Valid Input!!!!!!!");
+            return;
+        }
+
+        int sum = sumDigits(num);
+
+        
+        System.out.printf("Sum of Digit:%04d\n", sum);
+    }
+}
