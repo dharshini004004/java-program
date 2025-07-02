@@ -1,0 +1,37 @@
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.Scanner;
+
+public class DigitCountRecursive 
+{
+
+    
+    public static int countDigits(String s, int index) 
+    {
+        if (index == s.length()) 
+        {
+            return 0;
+        }
+        char c = s.charAt(index);
+        if (Character.isDigit(c))
+        {
+            return 1 + countDigits(s, index + 1);
+        } else
+        {
+            return countDigits(s, index + 1);
+        }
+    }
+
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        sc.close();
+
+        int count = countDigits(input, 0);
+
+        System.out.println("The Count the digits: " + count);
+    }
+}
